@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mombo Roland Tuan</title>
+<style>
+  :root{
+    --paper:#E9F0E9;
+    --paper-raised:#DCE7DC;
+    --ink:#000000;
+    --ink-soft:#26302A;
+    --rule:#BFCEC0;
+    --accent:#1F3A5F;
+    --accent-soft:#325377;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Iowan Old Style','Palatino Linotype','Georgia',serif;
+    font-weight:700;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--accent);color:var(--paper);}
+  a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px;}
+  a:hover{color:var(--accent-soft);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+
+  .col{max-width:640px;margin:0 auto;padding:0 32px;}
+
+  /* ---------- MASTHEAD ---------- */
+  .masthead{
+    padding:100px 0 56px;
+  }
+  .masthead .col{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  .place{
+    font-size:15px;
+    color:var(--ink-soft);
+    font-style:italic;
+    margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(42px,7vw,72px);
+    font-weight:800;
+    letter-spacing:-0.01em;
+    line-height:1;
+  }
+  .tagline{
+    margin-top:20px;
+    font-size:21px;
+    color:var(--ink-soft);
+    max-width:34ch;
+    line-height:1.5;
+  }
+  .reach{
+    margin-top:36px;
+    font-size:16px;
+    color:var(--ink-soft);
+  }
+  .reach a{color:var(--ink);}
+  .reach .sep{
+    display:block;
+    margin-top:4px;
+  }
+
+  hr.rule{
+    border:none;
+    border-top:1px solid var(--rule);
+    max-width:640px;
+    margin:0 auto;
+  }
+
+  /* ---------- SECTION ---------- */
+  section{padding:60px 0;}
+  .section-title{
+    font-size:15px;
+    font-style:italic;
+    color:var(--accent);
+    margin-bottom:24px;
+  }
+  h2{
+    font-size:27px;
+    font-weight:800;
+    line-height:1.35;
+    max-width:22ch;
+    margin-bottom:22px;
+  }
+  p{color:var(--ink-soft);max-width:60ch;font-size:17px;}
+  p + p{margin-top:16px;}
+  p.lede{color:var(--ink);font-size:18px;}
+
+  /* ---------- CURRENT (definition-list style, no badges) ---------- */
+  dl.current{margin-top:6px;}
+  dl.current div{
+    padding:22px 0;
+    border-top:1px solid var(--rule);
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+  }
+  dl.current div:last-child{border-bottom:1px solid var(--rule);}
+  dl.current dt{
+    font-size:18px;
+    color:var(--ink);
+  }
+  dl.current dd{
+    font-size:15px;
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+
+  /* ---------- CAPABILITIES (glossary style, no card grid) ---------- */
+  dl.capabilities{
+    columns:1;
+  }
+  dl.capabilities div{
+    padding:18px 0;
+    border-top:1px solid var(--rule);
+  }
+  dl.capabilities div:last-child{border-bottom:1px solid var(--rule);}
+  dl.capabilities dt{
+    font-size:18px;
+    color:var(--ink);
+    display:inline;
+  }
+  dl.capabilities dd{
+    display:inline;
+    color:var(--ink-soft);
+    font-size:16px;
+  }
+  dl.capabilities dd::before{
+    content:" — ";
+    color:var(--rule);
+  }
+
+  /* ---------- WORK ---------- */
+  .work-entry{
+    padding:26px 0;
+    border-top:1px solid var(--rule);
+  }
+  .work-entry:last-child{border-bottom:1px solid var(--rule);}
+  .work-entry h3{
+    font-size:19px;
+    font-weight:800;
+    color:var(--ink);
+  }
+  .work-entry .meta{
+    font-size:14px;
+    font-style:italic;
+    color:var(--accent-soft);
+    margin-top:2px;
+    margin-bottom:10px;
+  }
+  .work-entry p{font-size:16px;}
+
+  /* ---------- CONTACT (closing, quiet) ---------- */
+  .closing{
+    padding:64px 0 96px;
+  }
+  .closing h2{max-width:none;}
+  .closing p{font-size:19px;color:var(--ink);max-width:46ch;}
+  .contact-lines{
+    margin-top:32px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    font-size:17px;
+  }
+  .contact-lines a{color:var(--ink);}
+  .contact-lines a:hover{color:var(--accent);}
+  .contact-lines .label{
+    color:var(--ink-soft);
+    font-style:italic;
+    font-size:14px;
+    margin-right:8px;
+  }
+
+  footer{
+    padding:36px 0 56px;
+    text-align:center;
+    font-size:14px;
+    font-style:italic;
+    color:var(--ink-soft);
+  }
+
+  @media (max-width:600px){
+    .masthead{padding:64px 0 40px;}
+    section{padding:44px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="col">
+    <div class="place">Monrovia, Liberia</div>
+    <h1>Mombo Roland Tuan</h1>
+    <p class="tagline">Cybersecurity undergraduate and freelance developer. I break systems to understand them, then build the ones that hold up.</p>
+    <div class="reach">
+      <a href="mailto:mombotuan123@gmail.com">mombotuan123@gmail.com</a>
+      <span class="sep"><a href="tel:+231772866890">+231 772 866 890</a></span>
+      <span class="sep"><a href="https://www.linkedin.com/in/mombo-tuan-299a00415" target="_blank" rel="noopener">linkedin.com/in/mombo-tuan-299a00415</a></span>
+    </div>
+  </div>
+</header>
+
+<hr class="rule">
+
+<section id="about">
+  <div class="col">
+    <div class="section-title">Background</div>
+    <h2>Two years into a BSc in Cybersecurity, already working the field.</h2>
+    <p class="lede">I'm a high school graduate now in my sophomore year of a BSc in Cybersecurity, backing that up with Cisco Networking Academy's Introduction to Cybersecurity course on the side.</p>
+    <p>I'm from Liberia, born March 12, 2007, and I've been building toward this since finishing high school in September 2025. Cybersecurity is where I've chosen to specialize, but I got there through a broader foundation — I know my way around network management, database management, and IT help desk work, the kind of hands-on troubleshooting that teaches you how systems actually fail before you ever study how to secure them.</p>
+    <p>I'm the cybersecurity lead for <a href="https://liberia360.net" target="_blank" rel="noopener">Liberia360.net</a>, a Liberian startup — unpaid, by choice, because the experience is worth more than the check right now. To understand attacks from the inside, I built a working phishing-simulation site that shows exactly how social engineering tricks people, used strictly for training and awareness. Outside of that I freelance across AI, web, and app development, building things that actually ship, not just prototypes.</p>
+    <p>I'm still early in this — a sophomore, an unfinished certification, a startup role I'm not paid for yet — and I'd rather be honest about that than inflate it. What I can promise is that I show up, I finish what I start, and I keep building whether or not anyone's watching.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="timeline">
+  <div class="col">
+    <div class="section-title">Timeline</div>
+    <h2>The path so far</h2>
+    <dl class="current">
+      <div>
+        <dt>Born</dt>
+        <dd>March 12, 2007 — Liberia</dd>
+      </div>
+      <div>
+        <dt>Completed 9th grade</dt>
+        <dd>August 2022, end of the 2021–2022 school year</dd>
+      </div>
+      <div>
+        <dt>Graduated high school</dt>
+        <dd>September 20, 2025, end of the 2024–2025 school year</dd>
+      </div>
+      <div>
+        <dt>Began BSc in Cybersecurity</dt>
+        <dd>Currently a sophomore, degree in progress</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="status">
+  <div class="col">
+    <div class="section-title">Currently</div>
+    <h2>Where things stand right now</h2>
+    <dl class="current">
+      <div>
+        <dt>BSc in Cybersecurity — sophomore year</dt>
+        <dd>Undergraduate degree in progress</dd>
+      </div>
+      <div>
+        <dt>Cisco Networking Academy — Introduction to Cybersecurity</dt>
+        <dd>Self-paced coursework, not yet complete</dd>
+      </div>
+      <div>
+        <dt>Cybersecurity lead, Liberia360.net</dt>
+        <dd>Volunteer role, ongoing</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="capabilities">
+  <div class="col">
+    <div class="section-title">Capabilities</div>
+    <h2>What I put to work, not just list</h2>
+    <dl class="capabilities">
+      <div><dt>Network management</dt><dd>configuring, monitoring, and troubleshooting the layer everything else in security sits on top of.</dd></div>
+      <div><dt>Database management</dt><dd>designing and securing databases so data stays organized, available, and locked down.</dd></div>
+      <div><dt>IT help desk</dt><dd>hands-on support experience — diagnosing fast and getting people back to work.</dd></div>
+      <div><dt>Social engineering awareness</dt><dd>built a working phishing-simulation site to show, first-hand, how easily users get tricked; used for training, not live attacks.</dd></div>
+      <div><dt>Web and app development</dt><dd>freelance-tested experience shipping sites and apps with security built in from the start.</dd></div>
+      <div><dt>Applied AI</dt><dd>using AI tools as leverage in real freelance work, not just as a talking point.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="work">
+  <div class="col">
+    <div class="section-title">Selected work</div>
+    <h2>Projects worth mentioning</h2>
+
+    <div class="work-entry">
+      <h3>Liberia360.net</h3>
+      <div class="meta">Cybersecurity lead, volunteer, ongoing</div>
+      <p>Driving the security posture for a live Liberian startup platform — assessing risk and pushing decisions in the right direction.</p>
+    </div>
+
+    <div class="work-entry">
+      <h3>Phishing simulation site</h3>
+      <div class="meta">Security awareness project</div>
+      <p>Designed and built a functioning phishing-page simulation to expose exactly how social engineering attacks fool users — a controlled demo for training, not a live attack against real targets.</p>
+    </div>
+
+    <div class="work-entry">
+      <h3>Freelance web and app projects</h3>
+      <div class="meta">Independent, ongoing</div>
+      <p>Independent build work across web and app projects, with AI tooling included where it moves faster. Case studies coming soon.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="closing" id="contact">
+  <div class="col">
+    <div class="section-title">Get in touch</div>
+    <h2>Open to freelance work in security, web, and app development.</h2>
+    <p>If something here fits what you're building, reach out — I read everything myself.</p>
+    <div class="contact-lines">
+      <div><span class="label">Email</span><a href="mailto:mombotuan123@gmail.com">mombotuan123@gmail.com</a></div>
+      <div><span class="label">Phone</span><a href="tel:+231772866890">+231 772 866 890</a></div>
+      <div><span class="label">Phone</span><a href="tel:+231889925584">+231 889 925 584</a></div>
+      <div><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/mombo-tuan-299a00415" target="_blank" rel="noopener">linkedin.com/in/mombo-tuan-299a00415</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>Mombo Roland Tuan — Monrovia, Liberia</footer>
+
+</body>
+</html>
